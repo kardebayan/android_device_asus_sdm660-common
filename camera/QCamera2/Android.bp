@@ -17,7 +17,6 @@ cc_library_shared {
         "-D_ANDROID",
         "-DUSE_HAL_3_5",
         "-DUSE_MEDIA_EXTENSIONS",
-        "-DUSE_DISPLAY_SERVICE",
         "-std=c++14",
         "-std=gnu++1z",
         "-DUSE_VENDOR_PROP",
@@ -57,6 +56,8 @@ cc_library_shared {
         "libsystem_headers",
         "libhardware_headers",
         "generated_kernel_headers",
+        "libgui_headers",
+        "native_headers",
     ],
     ldflags: [
         "-Wl,--wrap=open",
@@ -91,9 +92,7 @@ cc_library_shared {
         "libdl",
         "libhal_dbg",
         "libion",
-        "android.frameworks.displayservice@1.0",
-        "android.hidl.base@1.0",
-        "libhidlbase",
+        "libgui_vendor",
     ],
     srcs: [
         "util/QCameraBufferMaps.cpp",
